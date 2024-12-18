@@ -1,0 +1,9 @@
+In file included from ../Analysis_MC_Run4_MinBiasRun4_MinBias_tau3mu_chunk23.cpp:1:
+../myAnalizer.C: In member function 'virtual void myAnalizer::Loop_Tau3mu(TString, TString)':
+../myAnalizer.C:62:5: error: expected ',' or ';' before 'for'
+   62 |     for (Long64_t jentry=0; jentry<nentries;jentry++) {
+      |     ^~~
+../myAnalizer.C:62:29: error: 'jentry' was not declared in this scope; did you mean 'GetEntry'?
+   62 |     for (Long64_t jentry=0; jentry<nentries;jentry++) {
+      |                             ^~~~~~
+      |                             GetEntry

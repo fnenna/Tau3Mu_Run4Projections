@@ -1,0 +1,2 @@
+ALL_PACKAGES += SkimTools/SkimTau3Mu
+subdirs_src_SkimTools_SkimTau3Mu := src_SkimTools_SkimTau3Mu_python src_SkimTools_SkimTau3Mu_test

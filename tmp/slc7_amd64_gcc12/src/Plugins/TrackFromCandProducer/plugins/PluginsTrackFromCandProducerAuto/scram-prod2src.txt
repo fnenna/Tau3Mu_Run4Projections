@@ -1,0 +1,1 @@
+PluginsTrackFromCandProducerAuto Plugins/TrackFromCandProducer/plugins/TrackFromCandProducer.cc

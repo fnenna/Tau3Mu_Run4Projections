@@ -1,0 +1,1 @@
+PluginsPFCandFilterAuto Plugins/PFCandFilter/plugins/PFCandFilter.cc

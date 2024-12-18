@@ -1,0 +1,2 @@
+ALL_PACKAGES += GenAnalyser/GenAnalyzer
+subdirs_src_GenAnalyser_GenAnalyzer := src_GenAnalyser_GenAnalyzer_plugins src_GenAnalyser_GenAnalyzer_python src_GenAnalyser_GenAnalyzer_test

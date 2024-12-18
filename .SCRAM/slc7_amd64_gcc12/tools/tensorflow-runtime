@@ -1,0 +1,10 @@
+{
+  "LIB": [
+    "cpu_function_runtime"
+  ],
+  "TOOLNAME": "tensorflow-runtime",
+  "TOOLVERSION": "2.12.0-193982c9be6fe9b4392ee442f0a49443",
+  "USE": [
+    "tensorflow"
+  ]
+}

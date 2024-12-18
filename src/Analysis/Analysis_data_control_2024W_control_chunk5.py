@@ -1,0 +1,330 @@
+from python_analysis_update2_dak import *
+import ROOT
+import sys
+import argparse
+import uproot
+import pandas as pd
+import awkward as ak
+import dask
+import dask_awkward as dak
+import time
+from distributed import Client, LocalCluster
+from dask_jobqueue import HTCondorCluster
+from dask.config import set as dask_set
+
+
+
+def main():
+    parser = argparse.ArgumentParser(
+                        prog='ProgramName',
+                        description='Analysis tau3mu control channel (DsPhiPi)',
+                        epilog='Text at the bottom of help')
+    parser.add_argument('-n','--narg')           # positional argument
+    parser.add_argument('-t','--type')      # option that takes a value
+    parser.add_argument('-d','--data')      # option that takes a value
+    args = parser.parse_args()
+    print(args.type)
+    #print(args.filename, args.count, args.verbose)
+    fileout = ""
+
+    tree = ROOT.TTree()
+    print(args.type)
+    type = args.type
+    print(f"type: {type}\n")
+    datasetName = args.data
+    print(f"datasetName : {datasetName}\n")
+
+    if type == "data_control":
+        print("Control channel analysis on data\n")
+        print(f"Data {datasetName}")
+        start = time.time()
+        files = {}
+        #files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0001/Tree_PhiPi_1116.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_524.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_632.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_415.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_999.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_746.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_285.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_991.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_296.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_837.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_370.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_754.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_688.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_604.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_845.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_528.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_949.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_903.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_120.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_663.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_265.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_231.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_908.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_467.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_675.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_100.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_348.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_730.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_900.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_825.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_809.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_793.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_454.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_694.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_456.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_989.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_886.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_785.root"] = "Tree3Mu/ntuple"
+        
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_277.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_390.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_376.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_332.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_879.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_72.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_209.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_196.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_335.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_679.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_466.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_579.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_443.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_818.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_241.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_264.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_18.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_772.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_684.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_351.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_713.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_21.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_748.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_733.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_627.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_190.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_366.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_618.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_505.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_990.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_361.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_396.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_901.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_287.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_878.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_739.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_341.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_582.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_788.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_246.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_545.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_163.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_806.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_312.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_896.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_678.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_971.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_559.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_423.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_569.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_666.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_525.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_501.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_336.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_623.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_286.root"] = "Tree3Mu/ntuple"
+        
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_800.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_773.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_502.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_40.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_822.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_278.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_589.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_217.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_192.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_659.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_300.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_212.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_254.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_271.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_45.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_891.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_980.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_507.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_90.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_617.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_259.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_566.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_427.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_691.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_563.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_431.root"] = "Tree3Mu/ntuple"
+        
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_495.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_831.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_134.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_58.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_651.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_29.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_640.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_105.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_776.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_22.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_708.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_496.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_52.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_428.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_223.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_368.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_520.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_998.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_797.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_810.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_151.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_31.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_795.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_270.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_599.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_301.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_274.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_586.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_929.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_844.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_108.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_6.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_737.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_584.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_865.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_168.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_738.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_633.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_238.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_391.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_9.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_258.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_171.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_488.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_405.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_863.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_194.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_492.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_41.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_709.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_237.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_266.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_125.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_888.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_952.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_610.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_434.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_377.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_975.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_780.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_311.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_960.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_304.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_821.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_707.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_567.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_798.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_556.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_701.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_470.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_230.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_561.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_511.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_384.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_349.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_983.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_911.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_294.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_702.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_343.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_326.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_970.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_585.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_615.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_905.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_756.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_481.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_95.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_693.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_140.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_768.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_131.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_118.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_57.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_67.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_811.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_603.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_462.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_802.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_383.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_853.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_393.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_158.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_630.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_96.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_789.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_477.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_382.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_839.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_185.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_847.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_890.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0000/Tree_PhiPi_682.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0001/Tree_PhiPi_1310.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0001/Tree_PhiPi_1278.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0001/Tree_PhiPi_1298.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0001/Tree_PhiPi_1217.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0001/Tree_PhiPi_1070.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0001/Tree_PhiPi_1358.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0001/Tree_PhiPi_1125.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0001/Tree_PhiPi_1167.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0001/Tree_PhiPi_1265.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0001/Tree_PhiPi_1240.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0001/Tree_PhiPi_1328.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0001/Tree_PhiPi_1085.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0001/Tree_PhiPi_1184.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0001/Tree_PhiPi_1321.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0001/Tree_PhiPi_1378.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0001/Tree_PhiPi_1118.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0001/Tree_PhiPi_1072.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0001/Tree_PhiPi_1038.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0001/Tree_PhiPi_1373.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0001/Tree_PhiPi_1248.root"] = "Tree3Mu/ntuple"
+        files["/lustre/cms/store/user/fnenna/ParkingDoubleMuonLowMass7/SkimDsPhiPi_2024eraF_stream7_Mini_v3/240917_162014/0001/Tree_PhiPi_1386.root"] = "Tree3Mu/ntuple"
+        # Use dask.delayed to load files in parallel
+        events = uproot.dask(files, open_files = False)
+        print(events)
+        #events = uproot.dask([files1, files2, files3], open_files = False)
+        fileout = "AnalysedTree_data_control_2024W_control4-new5.root"
+        arrays = Loop_DsPhiPi(events, type, datasetName, fileout)
+        smaller_collection = arrays.repartition(npartitions=100)
+        result = smaller_collection.compute()
+        arrays.compute()
+        print(arrays)
+        stop = time.time()
+        print(f"time to process: {stop - start}")
+        # Apply processing in parallel to each partition of the data
+        stop2 = time.time()
+        #with uproot.recreate(fileout) as arrays:
+        #    root_file["FinalTree"] = arrays  # Write the arrays to the tree
+        print(f"time to fill the output: {stop2 - stop}")
+        #Loop_DsPhiPi(chain, type, datasetName, fileout)
+        #Loop_DsPhiPi(chain, type, datasetName, fileout)
+    else: 
+        print("Input not valid, analysis has not be developped for not control channel")
+
+
+if __name__ == "__main__":
+    cluster = HTCondorCluster(cores=1, memory="4GB", disk="4GB", silence_logs = "debug", log_directory = "/lustrehome/felicenenna/tau3mu/CMSSW_14_0_12/src/Analysis", job_script_prologue = ["source /cvmfs/cms.cern.ch/cmsset_default.sh","cd /lustrehome/felicenenna/tau3mu/CMSSW_14_0_12/src/Analysis", "cmsenv"])
+    cluster.adapt(maximum_jobs = 255)
+    #cluster = LocalCluster(n_workers = 4, processes = False)
+    client = Client(cluster)
+    client.get_versions(check=True)
+    main()
+    #client.close()
+    cluster.close()

@@ -1,0 +1,9 @@
+In file included from ../Analysis_MC_Run4_MinBiasRun4_MinBias_tau3mu_chunk17.cpp:1:
+../myAnalizer.C: In member function 'virtual void myAnalizer::Loop_Tau3mu(TString, TString)':
+../myAnalizer.C:274:14: error: redeclaration of 'TCanvas* canvEta'
+  274 |     TCanvas *canvEta = new TCanvas("MuonPtEta", "MuonPtEta", 0, 0, 1200, 1000);
+      |              ^~~~~~~
+../myAnalizer.C:270:14: note: 'TCanvas* canvEta' previously declared here
+  270 |     TCanvas *canvEta = new TCanvas("MuonEta", "MuonEta", 0, 0, 1200, 1000);
+      |              ^~~~~~~
+Info in <TCanvas::Print>: png file AnalysedTree_MC_Run4_MinBias_tau3mu17.root.png has been created

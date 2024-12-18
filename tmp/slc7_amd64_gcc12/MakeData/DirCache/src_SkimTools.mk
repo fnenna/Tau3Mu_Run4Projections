@@ -1,0 +1,3 @@
+ALL_SUBSYSTEMS+=SkimTools
+subdirs_src_SkimTools = src_SkimTools_SkimTau3Mu src_SkimTools_SkimPhiPi src_SkimTools_SkimPhiMuNu
+subdirs_src += src_SkimTools

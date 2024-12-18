@@ -1,0 +1,14 @@
+{
+  "BUILDPRODUCTS": {
+    "BIN": {
+      "testGenAnalyserGenAnalyzerTP": {
+        "FILES": "test_catch2_*.cc",
+        "TYPE": "bin",
+        "USE": [
+          "FWCore/TestProcessor",
+          "catch2"
+        ]
+      }
+    }
+  }
+}

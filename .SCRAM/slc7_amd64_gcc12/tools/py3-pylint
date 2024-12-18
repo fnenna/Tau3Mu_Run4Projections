@@ -1,0 +1,13 @@
+{
+  "PY3_PYLINT_BASE": "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/py3-pylint/2.17.2-2d9ba5abdf3ed5f2b86f44582b4e6865",
+  "RUNTIME": {
+    "PATH:PATH": [
+      "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/py3-pylint/2.17.2-2d9ba5abdf3ed5f2b86f44582b4e6865/bin"
+    ]
+  },
+  "TOOLNAME": "py3-pylint",
+  "TOOLVERSION": "2.17.2-2d9ba5abdf3ed5f2b86f44582b4e6865",
+  "VARIABLES": [
+    "PY3_PYLINT_BASE"
+  ]
+}

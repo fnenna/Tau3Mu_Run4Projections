@@ -1,0 +1,2 @@
+01:/usr/bin/rm -f lib/slc7_amd64_gcc12/pluginGenAnalyserGenAnalyzerAuto.so lib/slc7_amd64_gcc12/GenAnalyserGenAnalyzerAuto.edmplugin
+90:edmPluginRefresh lib/slc7_amd64_gcc12

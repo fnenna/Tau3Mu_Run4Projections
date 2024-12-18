@@ -1,0 +1,7 @@
+In file included from ../Analysis_MC_Run4_DsTau3muRun4_DsTau3mu_tau3mu_chunk0.cpp:1:
+../myAnalizer.C: In member function 'virtual void myAnalizer::Loop_Tau3mu(TString, TString)':
+../myAnalizer.C:95:17: error: 'Muon_isME0' was not declared in this scope; did you mean 'Muon_isMVA'?
+   95 |             if (Muon_isME0->at(k)==1){
+      |                 ^~~~~~~~~~
+      |                 Muon_isMVA
+/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/Analysis/Run4_DsTau3mu_tau3mu_Run4_DsTau3Mu/launch_analysis_MC_Run4_DsTau3muRun4_DsTau3mu_tau3mu_0.job: line 27: ./executable0: No such file or directory

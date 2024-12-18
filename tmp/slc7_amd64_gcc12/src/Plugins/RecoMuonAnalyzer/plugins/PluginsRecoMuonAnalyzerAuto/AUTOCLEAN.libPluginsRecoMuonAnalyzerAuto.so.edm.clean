@@ -1,0 +1,2 @@
+01:/usr/bin/rm -f lib/slc7_amd64_gcc12/pluginPluginsRecoMuonAnalyzerAuto.so lib/slc7_amd64_gcc12/PluginsRecoMuonAnalyzerAuto.edmplugin
+90:edmPluginRefresh lib/slc7_amd64_gcc12

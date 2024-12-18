@@ -1,0 +1,6 @@
+<tool name="py3-avro" version="1.11.3-c8bc60f532601e32d0a0e9f2fb209f62">
+  <client>
+    <environment name="PY3_AVRO_BASE" default="/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/py3-avro/1.11.3-c8bc60f532601e32d0a0e9f2fb209f62"/>
+  </client>
+  <runtime name="PATH" value="$PY3_AVRO_BASE/bin" type="path"/>
+</tool>

@@ -1,0 +1,2 @@
+ALL_PACKAGES += Plugins/MiniAnaTau3Mu
+subdirs_src_Plugins_MiniAnaTau3Mu := src_Plugins_MiniAnaTau3Mu_plugins src_Plugins_MiniAnaTau3Mu_python src_Plugins_MiniAnaTau3Mu_test

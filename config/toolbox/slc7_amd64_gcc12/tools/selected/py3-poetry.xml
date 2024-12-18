@@ -1,0 +1,6 @@
+<tool name="py3-poetry" version="1.4.2-5be5ea9c11b4039929babe4bd07da648">
+  <client>
+    <environment name="PY3_POETRY_BASE" default="/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/py3-poetry/1.4.2-5be5ea9c11b4039929babe4bd07da648"/>
+  </client>
+  <runtime name="PATH" value="$PY3_POETRY_BASE/bin" type="path"/>
+</tool>

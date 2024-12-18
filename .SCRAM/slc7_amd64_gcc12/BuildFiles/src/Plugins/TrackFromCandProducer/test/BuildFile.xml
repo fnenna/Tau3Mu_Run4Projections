@@ -1,0 +1,14 @@
+{
+  "BUILDPRODUCTS": {
+    "BIN": {
+      "testTrackFromCandProducerTrackFromCandProducerTP": {
+        "FILES": "test_catch2_*.cc",
+        "TYPE": "bin",
+        "USE": [
+          "FWCore/TestProcessor",
+          "catch2"
+        ]
+      }
+    }
+  }
+}

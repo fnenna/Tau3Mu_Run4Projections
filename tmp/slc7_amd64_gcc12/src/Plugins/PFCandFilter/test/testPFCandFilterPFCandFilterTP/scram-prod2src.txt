@@ -1,0 +1,1 @@
+testPFCandFilterPFCandFilterTP Plugins/PFCandFilter/test/test_catch2_PFCandFilter.cc Plugins/PFCandFilter/test/test_catch2_main.cc

@@ -1,0 +1,1 @@
+testTrackFromCandProducerTrackFromCandProducerTP Plugins/TrackFromCandProducer/test/test_catch2_TrackFromCandProducer.cc Plugins/TrackFromCandProducer/test/test_catch2_main.cc

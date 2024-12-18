@@ -1,0 +1,2 @@
+ALL_PACKAGES += Plugins/TrackFromCandProducer
+subdirs_src_Plugins_TrackFromCandProducer := src_Plugins_TrackFromCandProducer_plugins src_Plugins_TrackFromCandProducer_python src_Plugins_TrackFromCandProducer_test

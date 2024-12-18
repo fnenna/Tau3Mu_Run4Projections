@@ -1,0 +1,1 @@
+PluginsDsPhiPiTreeMakerMINIAuto Plugins/DsPhiPiTreeMakerMINI/plugins/DsPhiPiTreeMakerMINI.cc

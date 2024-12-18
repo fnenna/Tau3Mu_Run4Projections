@@ -1,0 +1,2 @@
+ALL_PACKAGES += Plugins/PFCandFilter
+subdirs_src_Plugins_PFCandFilter := src_Plugins_PFCandFilter_plugins src_Plugins_PFCandFilter_python src_Plugins_PFCandFilter_test

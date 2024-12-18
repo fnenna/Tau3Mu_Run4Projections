@@ -1,0 +1,6 @@
+In file included from ../Analysis_MC_Run4_MinBiasRun4_MinBias_tau3mu_chunk15.cpp:1:
+../myAnalizer.C: In member function 'virtual void myAnalizer::Loop_Tau3mu(TString, TString)':
+../myAnalizer.C:79:39: error: expected ';' before ')' token
+   79 |         for(int k=0; k<MuonEta->size()){
+      |                                       ^
+      |                                       ;

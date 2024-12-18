@@ -1,0 +1,43 @@
+In file included from ../Analysis_MC_Run4_DsTau3muRun4_DsTau3mu_tau3mu_chunk0.cpp:1:
+../myAnalizer.C: In member function 'virtual void myAnalizer::Loop_Tau3mu(TString, TString)':
+../myAnalizer.C:299:53: error: invalid use of incomplete type 'class TLegend'
+  299 |     TLegend* legend = new TLegend(0.7, 0.7, 0.9, 0.9);
+      |                                                     ^
+In file included from /cvmfs/cms.cern.ch/slc7_amd64_gcc12/lcg/root/6.30.03-eeaa8ee64e8127bca194ba397d21d514//include/TPad.h:15,
+                 from /cvmfs/cms.cern.ch/slc7_amd64_gcc12/lcg/root/6.30.03-eeaa8ee64e8127bca194ba397d21d514//include/TCanvas.h:15,
+                 from ../myAnalizer.C:12:
+/cvmfs/cms.cern.ch/slc7_amd64_gcc12/lcg/root/6.30.03-eeaa8ee64e8127bca194ba397d21d514//include/TVirtualPad.h:45:7: note: forward declaration of 'class TLegend'
+   45 | class TLegend;
+      |       ^~~~~~~
+../myAnalizer.C:300:11: error: invalid use of incomplete type 'class TLegend'
+  300 |     legend->AddEntry(histo_muonEta, "All Muons", "l");
+      |           ^~
+/cvmfs/cms.cern.ch/slc7_amd64_gcc12/lcg/root/6.30.03-eeaa8ee64e8127bca194ba397d21d514//include/TVirtualPad.h:45:7: note: forward declaration of 'class TLegend'
+   45 | class TLegend;
+      |       ^~~~~~~
+../myAnalizer.C:301:11: error: invalid use of incomplete type 'class TLegend'
+  301 |     legend->AddEntry(histo_Me0MuonEta, "ME0 Muons", "l");
+      |           ^~
+/cvmfs/cms.cern.ch/slc7_amd64_gcc12/lcg/root/6.30.03-eeaa8ee64e8127bca194ba397d21d514//include/TVirtualPad.h:45:7: note: forward declaration of 'class TLegend'
+   45 | class TLegend;
+      |       ^~~~~~~
+../myAnalizer.C:302:11: error: invalid use of incomplete type 'class TLegend'
+  302 |     legend->AddEntry(histo_PfMuonEta, "PF Muons", "l");
+      |           ^~
+/cvmfs/cms.cern.ch/slc7_amd64_gcc12/lcg/root/6.30.03-eeaa8ee64e8127bca194ba397d21d514//include/TVirtualPad.h:45:7: note: forward declaration of 'class TLegend'
+   45 | class TLegend;
+      |       ^~~~~~~
+../myAnalizer.C:303:11: error: invalid use of incomplete type 'class TLegend'
+  303 |     legend->AddEntry(histo_TrackerMuonEta, "Tracker Muons", "l");
+      |           ^~
+/cvmfs/cms.cern.ch/slc7_amd64_gcc12/lcg/root/6.30.03-eeaa8ee64e8127bca194ba397d21d514//include/TVirtualPad.h:45:7: note: forward declaration of 'class TLegend'
+   45 | class TLegend;
+      |       ^~~~~~~
+../myAnalizer.C:308:12: error: invalid use of incomplete type 'class TLegend'
+  308 |     legend -> Draw("same");
+      |            ^~
+/cvmfs/cms.cern.ch/slc7_amd64_gcc12/lcg/root/6.30.03-eeaa8ee64e8127bca194ba397d21d514//include/TVirtualPad.h:45:7: note: forward declaration of 'class TLegend'
+   45 | class TLegend;
+      |       ^~~~~~~
+Info in <TCanvas::Print>: png file AnalysedTree_MC_Run4_DsTau3mu_tau3mu0.root.png has been created
+Info in <TCanvas::Print>: png file AnalysedTree_MC_Run4_DsTau3mu_tau3mu0.root_histo2d.png has been created

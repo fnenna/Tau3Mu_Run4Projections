@@ -1,0 +1,1255 @@
+DEBUG 2024-12-11 10:35:41.220 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2024-12-11 10:35:41.220 UTC: 	 Running on: Linux ui02.recas.ba.infn.it 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2024-12-11 10:35:41.220 UTC: 	 Not using Singularity
+DEBUG 2024-12-11 10:35:41.220 UTC: 	 Operating System: CentOS Linux 7 (Core)
+DEBUG 2024-12-11 10:35:41.220 UTC: 	 Executing command: 'submit'
+DEBUG 2024-12-11 10:35:41.220 UTC: 	 Could not find CRAB cache file /lustrehome/felicenenna/.crab3; creating a new one.
+ERROR 2024-12-11 10:35:41.226 UTC: 	 CRAB configuration file crab_MCRun4_BdTau3mu_cfg.py not found.
+ERROR 2024-12-11 10:35:41.226 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/submit.py", line 37, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 326, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 52, in loadConfig
+    raise ConfigurationException("CRAB configuration file %s not found." % (configname))
+CRABClient.ClientExceptions.ConfigurationException: CRAB configuration file crab_MCRun4_BdTau3mu_cfg.py not found.
+INFO 2024-12-11 10:35:41.230 UTC: 	 Log file is /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab.log
+DEBUG 2024-12-11 10:35:49.657 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2024-12-11 10:35:49.657 UTC: 	 Running on: Linux ui02.recas.ba.infn.it 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2024-12-11 10:35:49.657 UTC: 	 Not using Singularity
+DEBUG 2024-12-11 10:35:49.657 UTC: 	 Operating System: CentOS Linux 7 (Core)
+DEBUG 2024-12-11 10:35:49.657 UTC: 	 Executing command: 'submit'
+DEBUG 2024-12-11 10:35:49.657 UTC: 	 Found CRAB cache file /lustrehome/felicenenna/.crab3
+ERROR 2024-12-11 10:35:49.659 UTC: 	 CRAB configuration file crab_MCRun4_BuTau3mu_cfg.py not found.
+ERROR 2024-12-11 10:35:49.659 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/submit.py", line 37, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 326, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 52, in loadConfig
+    raise ConfigurationException("CRAB configuration file %s not found." % (configname))
+CRABClient.ClientExceptions.ConfigurationException: CRAB configuration file crab_MCRun4_BuTau3mu_cfg.py not found.
+INFO 2024-12-11 10:35:49.664 UTC: 	 Log file is /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab.log
+DEBUG 2024-12-11 10:35:58.203 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2024-12-11 10:35:58.203 UTC: 	 Running on: Linux ui02.recas.ba.infn.it 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2024-12-11 10:35:58.203 UTC: 	 Not using Singularity
+DEBUG 2024-12-11 10:35:58.203 UTC: 	 Operating System: CentOS Linux 7 (Core)
+DEBUG 2024-12-11 10:35:58.203 UTC: 	 Executing command: 'submit'
+DEBUG 2024-12-11 10:35:58.203 UTC: 	 Found CRAB cache file /lustrehome/felicenenna/.crab3
+ERROR 2024-12-11 10:35:58.204 UTC: 	 CRAB configuration file crab_MCRun4_DsTau3mu_cfg.py not found.
+ERROR 2024-12-11 10:35:58.205 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/submit.py", line 37, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 326, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 52, in loadConfig
+    raise ConfigurationException("CRAB configuration file %s not found." % (configname))
+CRABClient.ClientExceptions.ConfigurationException: CRAB configuration file crab_MCRun4_DsTau3mu_cfg.py not found.
+INFO 2024-12-11 10:35:58.208 UTC: 	 Log file is /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab.log
+DEBUG 2024-12-11 10:36:32.428 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2024-12-11 10:36:32.429 UTC: 	 Running on: Linux ui02.recas.ba.infn.it 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2024-12-11 10:36:32.429 UTC: 	 Not using Singularity
+DEBUG 2024-12-11 10:36:32.429 UTC: 	 Operating System: CentOS Linux 7 (Core)
+DEBUG 2024-12-11 10:36:32.429 UTC: 	 Executing command: 'submit'
+DEBUG 2024-12-11 10:36:32.430 UTC: 	 Found CRAB cache file /lustrehome/felicenenna/.crab3
+INFO 2024-12-11 10:36:32.433 UTC: 	 Will use CRAB configuration file crab_MCRun4_BdTau3Mu_cfg.py
+DEBUG 2024-12-11 10:36:32.433 UTC: 	 Loading CRAB configuration file.
+ERROR 2024-12-11 10:36:32.440 UTC: 	 Error while loading CRAB configuration:
+EOL while scanning string literal (crab_MCRun4_BdTau3Mu_cfg.py, line 23)
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2024-12-11 10:36:32.440 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/WMCore/Configuration.py", line 339, in loadConfigurationFile
+    modRef = load_module(cfgBaseName, modPath)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/__init__.py", line 38, in load_module
+    return imp.load_module(moduleName, moduleObj[0],
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 711, in _load
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 983, in get_code
+  File "<frozen importlib._bootstrap_external>", line 913, in source_to_code
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_MCRun4_BdTau3Mu_cfg.py", line 23
+    config.Data.outputDatasetTag = "BdTau3mu_MCRun4'
+                                                    ^
+SyntaxError: EOL while scanning string literal
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 56, in loadConfig
+    self.configuration = loadConfigurationFile(os.path.abspath(configname))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/WMCore/Configuration.py", line 346, in loadConfigurationFile
+    raise RuntimeError(msg)
+RuntimeError: Unable to load Configuration File:
+/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_MCRun4_BdTau3Mu_cfg.py
+Due to error:
+EOL while scanning string literal (crab_MCRun4_BdTau3Mu_cfg.py, line 23)Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/WMCore/Configuration.py", line 339, in loadConfigurationFile
+    modRef = load_module(cfgBaseName, modPath)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/__init__.py", line 38, in load_module
+    return imp.load_module(moduleName, moduleObj[0],
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 711, in _load
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 983, in get_code
+  File "<frozen importlib._bootstrap_external>", line 913, in source_to_code
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_MCRun4_BdTau3Mu_cfg.py", line 23
+    config.Data.outputDatasetTag = "BdTau3mu_MCRun4'
+                                                    ^
+SyntaxError: EOL while scanning string literal
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/submit.py", line 37, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 326, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 90, in loadConfig
+    raise ConfigurationException(configmsg)
+CRABClient.ClientExceptions.ConfigurationException: Error while loading CRAB configuration:
+EOL while scanning string literal (crab_MCRun4_BdTau3Mu_cfg.py, line 23)
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+INFO 2024-12-11 10:36:32.451 UTC: 	 Log file is /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab.log
+DEBUG 2024-12-11 10:36:41.068 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2024-12-11 10:36:41.068 UTC: 	 Running on: Linux ui02.recas.ba.infn.it 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2024-12-11 10:36:41.068 UTC: 	 Not using Singularity
+DEBUG 2024-12-11 10:36:41.068 UTC: 	 Operating System: CentOS Linux 7 (Core)
+DEBUG 2024-12-11 10:36:41.068 UTC: 	 Executing command: 'submit'
+DEBUG 2024-12-11 10:36:41.069 UTC: 	 Found CRAB cache file /lustrehome/felicenenna/.crab3
+INFO 2024-12-11 10:36:41.070 UTC: 	 Will use CRAB configuration file crab_MCRun4_BuTau3Mu_cfg.py
+DEBUG 2024-12-11 10:36:41.070 UTC: 	 Loading CRAB configuration file.
+ERROR 2024-12-11 10:36:41.075 UTC: 	 Error while loading CRAB configuration:
+EOL while scanning string literal (crab_MCRun4_BuTau3Mu_cfg.py, line 23)
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2024-12-11 10:36:41.075 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/WMCore/Configuration.py", line 339, in loadConfigurationFile
+    modRef = load_module(cfgBaseName, modPath)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/__init__.py", line 38, in load_module
+    return imp.load_module(moduleName, moduleObj[0],
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 711, in _load
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 983, in get_code
+  File "<frozen importlib._bootstrap_external>", line 913, in source_to_code
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_MCRun4_BuTau3Mu_cfg.py", line 23
+    config.Data.outputDatasetTag = "BuTau3mu_MCRun4'
+                                                    ^
+SyntaxError: EOL while scanning string literal
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 56, in loadConfig
+    self.configuration = loadConfigurationFile(os.path.abspath(configname))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/WMCore/Configuration.py", line 346, in loadConfigurationFile
+    raise RuntimeError(msg)
+RuntimeError: Unable to load Configuration File:
+/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_MCRun4_BuTau3Mu_cfg.py
+Due to error:
+EOL while scanning string literal (crab_MCRun4_BuTau3Mu_cfg.py, line 23)Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/WMCore/Configuration.py", line 339, in loadConfigurationFile
+    modRef = load_module(cfgBaseName, modPath)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/__init__.py", line 38, in load_module
+    return imp.load_module(moduleName, moduleObj[0],
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 711, in _load
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 983, in get_code
+  File "<frozen importlib._bootstrap_external>", line 913, in source_to_code
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_MCRun4_BuTau3Mu_cfg.py", line 23
+    config.Data.outputDatasetTag = "BuTau3mu_MCRun4'
+                                                    ^
+SyntaxError: EOL while scanning string literal
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/submit.py", line 37, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 326, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 90, in loadConfig
+    raise ConfigurationException(configmsg)
+CRABClient.ClientExceptions.ConfigurationException: Error while loading CRAB configuration:
+EOL while scanning string literal (crab_MCRun4_BuTau3Mu_cfg.py, line 23)
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+INFO 2024-12-11 10:36:41.079 UTC: 	 Log file is /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab.log
+DEBUG 2024-12-11 10:36:49.589 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2024-12-11 10:36:49.590 UTC: 	 Running on: Linux ui02.recas.ba.infn.it 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2024-12-11 10:36:49.590 UTC: 	 Not using Singularity
+DEBUG 2024-12-11 10:36:49.590 UTC: 	 Operating System: CentOS Linux 7 (Core)
+DEBUG 2024-12-11 10:36:49.590 UTC: 	 Executing command: 'submit'
+DEBUG 2024-12-11 10:36:49.591 UTC: 	 Found CRAB cache file /lustrehome/felicenenna/.crab3
+INFO 2024-12-11 10:36:49.595 UTC: 	 Will use CRAB configuration file crab_MCRun4_DsTau3Mu_cfg.py
+DEBUG 2024-12-11 10:36:49.596 UTC: 	 Loading CRAB configuration file.
+ERROR 2024-12-11 10:36:49.602 UTC: 	 Error while loading CRAB configuration:
+EOL while scanning string literal (crab_MCRun4_DsTau3Mu_cfg.py, line 23)
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2024-12-11 10:36:49.602 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/WMCore/Configuration.py", line 339, in loadConfigurationFile
+    modRef = load_module(cfgBaseName, modPath)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/__init__.py", line 38, in load_module
+    return imp.load_module(moduleName, moduleObj[0],
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 711, in _load
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 983, in get_code
+  File "<frozen importlib._bootstrap_external>", line 913, in source_to_code
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_MCRun4_DsTau3Mu_cfg.py", line 23
+    config.Data.outputDatasetTag = "DsTau3mu_MCRun4'
+                                                    ^
+SyntaxError: EOL while scanning string literal
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 56, in loadConfig
+    self.configuration = loadConfigurationFile(os.path.abspath(configname))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/WMCore/Configuration.py", line 346, in loadConfigurationFile
+    raise RuntimeError(msg)
+RuntimeError: Unable to load Configuration File:
+/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_MCRun4_DsTau3Mu_cfg.py
+Due to error:
+EOL while scanning string literal (crab_MCRun4_DsTau3Mu_cfg.py, line 23)Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/WMCore/Configuration.py", line 339, in loadConfigurationFile
+    modRef = load_module(cfgBaseName, modPath)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/__init__.py", line 38, in load_module
+    return imp.load_module(moduleName, moduleObj[0],
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 711, in _load
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 983, in get_code
+  File "<frozen importlib._bootstrap_external>", line 913, in source_to_code
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_MCRun4_DsTau3Mu_cfg.py", line 23
+    config.Data.outputDatasetTag = "DsTau3mu_MCRun4'
+                                                    ^
+SyntaxError: EOL while scanning string literal
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/submit.py", line 37, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 326, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 90, in loadConfig
+    raise ConfigurationException(configmsg)
+CRABClient.ClientExceptions.ConfigurationException: Error while loading CRAB configuration:
+EOL while scanning string literal (crab_MCRun4_DsTau3Mu_cfg.py, line 23)
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+INFO 2024-12-11 10:36:49.606 UTC: 	 Log file is /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab.log
+DEBUG 2024-12-11 10:38:32.166 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2024-12-11 10:38:32.166 UTC: 	 Running on: Linux ui02.recas.ba.infn.it 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2024-12-11 10:38:32.166 UTC: 	 Not using Singularity
+DEBUG 2024-12-11 10:38:32.166 UTC: 	 Operating System: CentOS Linux 7 (Core)
+DEBUG 2024-12-11 10:38:32.167 UTC: 	 Executing command: 'submit'
+DEBUG 2024-12-11 10:38:32.168 UTC: 	 Found CRAB cache file /lustrehome/felicenenna/.crab3
+INFO 2024-12-11 10:38:32.169 UTC: 	 Will use CRAB configuration file crab_MCRun4_BdTau3Mu_cfg.py
+DEBUG 2024-12-11 10:38:32.169 UTC: 	 Loading CRAB configuration file.
+ERROR 2024-12-11 10:38:32.255 UTC: 	 Error while loading CRAB configuration:
+No module named 'config_info'
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2024-12-11 10:38:32.255 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/WMCore/Configuration.py", line 339, in loadConfigurationFile
+    modRef = load_module(cfgBaseName, modPath)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/__init__.py", line 38, in load_module
+    return imp.load_module(moduleName, moduleObj[0],
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 711, in _load
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_MCRun4_BdTau3Mu_cfg.py", line 3, in <module>
+    import config_info
+ModuleNotFoundError: No module named 'config_info'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 56, in loadConfig
+    self.configuration = loadConfigurationFile(os.path.abspath(configname))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/WMCore/Configuration.py", line 346, in loadConfigurationFile
+    raise RuntimeError(msg)
+RuntimeError: Unable to load Configuration File:
+/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_MCRun4_BdTau3Mu_cfg.py
+Due to error:
+No module named 'config_info'Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/WMCore/Configuration.py", line 339, in loadConfigurationFile
+    modRef = load_module(cfgBaseName, modPath)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/__init__.py", line 38, in load_module
+    return imp.load_module(moduleName, moduleObj[0],
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 711, in _load
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_MCRun4_BdTau3Mu_cfg.py", line 3, in <module>
+    import config_info
+ModuleNotFoundError: No module named 'config_info'
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/submit.py", line 37, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 326, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 90, in loadConfig
+    raise ConfigurationException(configmsg)
+CRABClient.ClientExceptions.ConfigurationException: Error while loading CRAB configuration:
+No module named 'config_info'
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+INFO 2024-12-11 10:38:32.269 UTC: 	 Log file is /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab.log
+DEBUG 2024-12-11 10:38:41.293 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2024-12-11 10:38:41.294 UTC: 	 Running on: Linux ui02.recas.ba.infn.it 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2024-12-11 10:38:41.294 UTC: 	 Not using Singularity
+DEBUG 2024-12-11 10:38:41.294 UTC: 	 Operating System: CentOS Linux 7 (Core)
+DEBUG 2024-12-11 10:38:41.294 UTC: 	 Executing command: 'submit'
+DEBUG 2024-12-11 10:38:41.295 UTC: 	 Found CRAB cache file /lustrehome/felicenenna/.crab3
+INFO 2024-12-11 10:38:41.297 UTC: 	 Will use CRAB configuration file crab_MCRun4_BuTau3Mu_cfg.py
+DEBUG 2024-12-11 10:38:41.297 UTC: 	 Loading CRAB configuration file.
+ERROR 2024-12-11 10:38:41.418 UTC: 	 Error while loading CRAB configuration:
+No module named 'config_info'
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2024-12-11 10:38:41.419 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/WMCore/Configuration.py", line 339, in loadConfigurationFile
+    modRef = load_module(cfgBaseName, modPath)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/__init__.py", line 38, in load_module
+    return imp.load_module(moduleName, moduleObj[0],
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 711, in _load
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_MCRun4_BuTau3Mu_cfg.py", line 3, in <module>
+    import config_info
+ModuleNotFoundError: No module named 'config_info'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 56, in loadConfig
+    self.configuration = loadConfigurationFile(os.path.abspath(configname))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/WMCore/Configuration.py", line 346, in loadConfigurationFile
+    raise RuntimeError(msg)
+RuntimeError: Unable to load Configuration File:
+/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_MCRun4_BuTau3Mu_cfg.py
+Due to error:
+No module named 'config_info'Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/WMCore/Configuration.py", line 339, in loadConfigurationFile
+    modRef = load_module(cfgBaseName, modPath)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/__init__.py", line 38, in load_module
+    return imp.load_module(moduleName, moduleObj[0],
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 711, in _load
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_MCRun4_BuTau3Mu_cfg.py", line 3, in <module>
+    import config_info
+ModuleNotFoundError: No module named 'config_info'
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/submit.py", line 37, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 326, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 90, in loadConfig
+    raise ConfigurationException(configmsg)
+CRABClient.ClientExceptions.ConfigurationException: Error while loading CRAB configuration:
+No module named 'config_info'
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+INFO 2024-12-11 10:38:41.440 UTC: 	 Log file is /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab.log
+DEBUG 2024-12-11 10:38:50.270 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2024-12-11 10:38:50.270 UTC: 	 Running on: Linux ui02.recas.ba.infn.it 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2024-12-11 10:38:50.270 UTC: 	 Not using Singularity
+DEBUG 2024-12-11 10:38:50.270 UTC: 	 Operating System: CentOS Linux 7 (Core)
+DEBUG 2024-12-11 10:38:50.270 UTC: 	 Executing command: 'submit'
+DEBUG 2024-12-11 10:38:50.270 UTC: 	 Found CRAB cache file /lustrehome/felicenenna/.crab3
+INFO 2024-12-11 10:38:50.272 UTC: 	 Will use CRAB configuration file crab_MCRun4_DsTau3Mu_cfg.py
+DEBUG 2024-12-11 10:38:50.272 UTC: 	 Loading CRAB configuration file.
+ERROR 2024-12-11 10:38:50.363 UTC: 	 Error while loading CRAB configuration:
+No module named 'config_info'
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2024-12-11 10:38:50.363 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/WMCore/Configuration.py", line 339, in loadConfigurationFile
+    modRef = load_module(cfgBaseName, modPath)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/__init__.py", line 38, in load_module
+    return imp.load_module(moduleName, moduleObj[0],
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 711, in _load
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_MCRun4_DsTau3Mu_cfg.py", line 3, in <module>
+    import config_info
+ModuleNotFoundError: No module named 'config_info'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 56, in loadConfig
+    self.configuration = loadConfigurationFile(os.path.abspath(configname))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/WMCore/Configuration.py", line 346, in loadConfigurationFile
+    raise RuntimeError(msg)
+RuntimeError: Unable to load Configuration File:
+/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_MCRun4_DsTau3Mu_cfg.py
+Due to error:
+No module named 'config_info'Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/WMCore/Configuration.py", line 339, in loadConfigurationFile
+    modRef = load_module(cfgBaseName, modPath)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/__init__.py", line 38, in load_module
+    return imp.load_module(moduleName, moduleObj[0],
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 711, in _load
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_MCRun4_DsTau3Mu_cfg.py", line 3, in <module>
+    import config_info
+ModuleNotFoundError: No module named 'config_info'
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/submit.py", line 37, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 326, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 90, in loadConfig
+    raise ConfigurationException(configmsg)
+CRABClient.ClientExceptions.ConfigurationException: Error while loading CRAB configuration:
+No module named 'config_info'
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+INFO 2024-12-11 10:38:50.367 UTC: 	 Log file is /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab.log
+DEBUG 2024-12-11 10:42:20.935 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2024-12-11 10:42:20.936 UTC: 	 Running on: Linux ui02.recas.ba.infn.it 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2024-12-11 10:42:20.936 UTC: 	 Not using Singularity
+DEBUG 2024-12-11 10:42:20.936 UTC: 	 Operating System: CentOS Linux 7 (Core)
+DEBUG 2024-12-11 10:42:20.936 UTC: 	 Executing command: 'submit'
+DEBUG 2024-12-11 10:42:20.936 UTC: 	 Found CRAB cache file /lustrehome/felicenenna/.crab3
+INFO 2024-12-11 10:42:20.937 UTC: 	 Will use CRAB configuration file crab_MCRun4_BdTau3Mu_cfg.py
+DEBUG 2024-12-11 10:42:20.937 UTC: 	 Loading CRAB configuration file.
+ERROR 2024-12-11 10:42:21.009 UTC: 	 Error while loading CRAB configuration:
+No module named 'config_info'
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2024-12-11 10:42:21.009 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/WMCore/Configuration.py", line 339, in loadConfigurationFile
+    modRef = load_module(cfgBaseName, modPath)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/__init__.py", line 38, in load_module
+    return imp.load_module(moduleName, moduleObj[0],
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 711, in _load
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_MCRun4_BdTau3Mu_cfg.py", line 3, in <module>
+    import config_info
+ModuleNotFoundError: No module named 'config_info'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 56, in loadConfig
+    self.configuration = loadConfigurationFile(os.path.abspath(configname))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/WMCore/Configuration.py", line 346, in loadConfigurationFile
+    raise RuntimeError(msg)
+RuntimeError: Unable to load Configuration File:
+/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_MCRun4_BdTau3Mu_cfg.py
+Due to error:
+No module named 'config_info'Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/WMCore/Configuration.py", line 339, in loadConfigurationFile
+    modRef = load_module(cfgBaseName, modPath)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/__init__.py", line 38, in load_module
+    return imp.load_module(moduleName, moduleObj[0],
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 711, in _load
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_MCRun4_BdTau3Mu_cfg.py", line 3, in <module>
+    import config_info
+ModuleNotFoundError: No module named 'config_info'
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/submit.py", line 37, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 326, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 90, in loadConfig
+    raise ConfigurationException(configmsg)
+CRABClient.ClientExceptions.ConfigurationException: Error while loading CRAB configuration:
+No module named 'config_info'
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+INFO 2024-12-11 10:42:21.014 UTC: 	 Log file is /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab.log
+DEBUG 2024-12-11 10:42:29.316 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2024-12-11 10:42:29.316 UTC: 	 Running on: Linux ui02.recas.ba.infn.it 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2024-12-11 10:42:29.316 UTC: 	 Not using Singularity
+DEBUG 2024-12-11 10:42:29.316 UTC: 	 Operating System: CentOS Linux 7 (Core)
+DEBUG 2024-12-11 10:42:29.316 UTC: 	 Executing command: 'submit'
+DEBUG 2024-12-11 10:42:29.317 UTC: 	 Found CRAB cache file /lustrehome/felicenenna/.crab3
+INFO 2024-12-11 10:42:29.317 UTC: 	 Will use CRAB configuration file crab_MCRun4_BuTau3Mu_cfg.py
+DEBUG 2024-12-11 10:42:29.317 UTC: 	 Loading CRAB configuration file.
+ERROR 2024-12-11 10:42:29.390 UTC: 	 Error while loading CRAB configuration:
+No module named 'config_info'
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2024-12-11 10:42:29.390 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/WMCore/Configuration.py", line 339, in loadConfigurationFile
+    modRef = load_module(cfgBaseName, modPath)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/__init__.py", line 38, in load_module
+    return imp.load_module(moduleName, moduleObj[0],
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 711, in _load
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_MCRun4_BuTau3Mu_cfg.py", line 3, in <module>
+    import config_info
+ModuleNotFoundError: No module named 'config_info'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 56, in loadConfig
+    self.configuration = loadConfigurationFile(os.path.abspath(configname))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/WMCore/Configuration.py", line 346, in loadConfigurationFile
+    raise RuntimeError(msg)
+RuntimeError: Unable to load Configuration File:
+/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_MCRun4_BuTau3Mu_cfg.py
+Due to error:
+No module named 'config_info'Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/WMCore/Configuration.py", line 339, in loadConfigurationFile
+    modRef = load_module(cfgBaseName, modPath)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/__init__.py", line 38, in load_module
+    return imp.load_module(moduleName, moduleObj[0],
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 711, in _load
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_MCRun4_BuTau3Mu_cfg.py", line 3, in <module>
+    import config_info
+ModuleNotFoundError: No module named 'config_info'
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/submit.py", line 37, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 326, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 90, in loadConfig
+    raise ConfigurationException(configmsg)
+CRABClient.ClientExceptions.ConfigurationException: Error while loading CRAB configuration:
+No module named 'config_info'
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+INFO 2024-12-11 10:42:29.394 UTC: 	 Log file is /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab.log
+DEBUG 2024-12-11 10:42:37.678 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2024-12-11 10:42:37.678 UTC: 	 Running on: Linux ui02.recas.ba.infn.it 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2024-12-11 10:42:37.678 UTC: 	 Not using Singularity
+DEBUG 2024-12-11 10:42:37.678 UTC: 	 Operating System: CentOS Linux 7 (Core)
+DEBUG 2024-12-11 10:42:37.679 UTC: 	 Executing command: 'submit'
+DEBUG 2024-12-11 10:42:37.679 UTC: 	 Found CRAB cache file /lustrehome/felicenenna/.crab3
+INFO 2024-12-11 10:42:37.679 UTC: 	 Will use CRAB configuration file crab_MCRun4_DsTau3Mu_cfg.py
+DEBUG 2024-12-11 10:42:37.680 UTC: 	 Loading CRAB configuration file.
+ERROR 2024-12-11 10:42:37.736 UTC: 	 Error while loading CRAB configuration:
+No module named 'config_info'
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2024-12-11 10:42:37.736 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/WMCore/Configuration.py", line 339, in loadConfigurationFile
+    modRef = load_module(cfgBaseName, modPath)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/__init__.py", line 38, in load_module
+    return imp.load_module(moduleName, moduleObj[0],
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 711, in _load
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_MCRun4_DsTau3Mu_cfg.py", line 3, in <module>
+    import config_info
+ModuleNotFoundError: No module named 'config_info'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 56, in loadConfig
+    self.configuration = loadConfigurationFile(os.path.abspath(configname))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/WMCore/Configuration.py", line 346, in loadConfigurationFile
+    raise RuntimeError(msg)
+RuntimeError: Unable to load Configuration File:
+/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_MCRun4_DsTau3Mu_cfg.py
+Due to error:
+No module named 'config_info'Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/WMCore/Configuration.py", line 339, in loadConfigurationFile
+    modRef = load_module(cfgBaseName, modPath)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/__init__.py", line 38, in load_module
+    return imp.load_module(moduleName, moduleObj[0],
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc12/external/python3/3.9.14-4612d00f9f0430a19291545f1e47b4a4/lib/python3.9/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 711, in _load
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_MCRun4_DsTau3Mu_cfg.py", line 3, in <module>
+    import config_info
+ModuleNotFoundError: No module named 'config_info'
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/submit.py", line 37, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 326, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 90, in loadConfig
+    raise ConfigurationException(configmsg)
+CRABClient.ClientExceptions.ConfigurationException: Error while loading CRAB configuration:
+No module named 'config_info'
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+INFO 2024-12-11 10:42:37.739 UTC: 	 Log file is /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab.log
+DEBUG 2024-12-11 10:46:41.743 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2024-12-11 10:46:41.744 UTC: 	 Running on: Linux ui02.recas.ba.infn.it 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2024-12-11 10:46:41.744 UTC: 	 Not using Singularity
+DEBUG 2024-12-11 10:46:41.744 UTC: 	 Operating System: CentOS Linux 7 (Core)
+DEBUG 2024-12-11 10:46:41.744 UTC: 	 Executing command: 'submit'
+DEBUG 2024-12-11 10:46:41.744 UTC: 	 Found CRAB cache file /lustrehome/felicenenna/.crab3
+INFO 2024-12-11 10:46:41.745 UTC: 	 Will use CRAB configuration file crab_MCRun4_BdTau3Mu_cfg.py
+DEBUG 2024-12-11 10:46:41.745 UTC: 	 Loading CRAB configuration file.
+DEBUG 2024-12-11 10:46:41.783 UTC: 	 Will use CRAB plugin ANALYSIS (i.e. will run an analysis job type).
+ERROR 2024-12-11 10:46:41.783 UTC: 	 Working area '/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_SkimTau3mu_MCRun4_BdTau3Mu' already exists 
+Please change the requestName in the config file
+ERROR 2024-12-11 10:46:41.783 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/submit.py", line 37, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 328, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/ClientUtilities.py", line 392, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_SkimTau3mu_MCRun4_BdTau3Mu' already exists 
+Please change the requestName in the config file
+INFO 2024-12-11 10:46:41.786 UTC: 	 Log file is /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab.log
+DEBUG 2024-12-11 10:46:49.705 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2024-12-11 10:46:49.705 UTC: 	 Running on: Linux ui02.recas.ba.infn.it 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2024-12-11 10:46:49.705 UTC: 	 Not using Singularity
+DEBUG 2024-12-11 10:46:49.705 UTC: 	 Operating System: CentOS Linux 7 (Core)
+DEBUG 2024-12-11 10:46:49.705 UTC: 	 Executing command: 'submit'
+DEBUG 2024-12-11 10:46:49.705 UTC: 	 Found CRAB cache file /lustrehome/felicenenna/.crab3
+INFO 2024-12-11 10:46:49.706 UTC: 	 Will use CRAB configuration file crab_MCRun4_BuTau3Mu_cfg.py
+DEBUG 2024-12-11 10:46:49.706 UTC: 	 Loading CRAB configuration file.
+DEBUG 2024-12-11 10:46:49.743 UTC: 	 Will use CRAB plugin ANALYSIS (i.e. will run an analysis job type).
+ERROR 2024-12-11 10:46:49.744 UTC: 	 Working area '/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_SkimTau3mu_MCRun4_BuTau3Mu' already exists 
+Please change the requestName in the config file
+ERROR 2024-12-11 10:46:49.744 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/submit.py", line 37, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 328, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/ClientUtilities.py", line 392, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_SkimTau3mu_MCRun4_BuTau3Mu' already exists 
+Please change the requestName in the config file
+INFO 2024-12-11 10:46:49.747 UTC: 	 Log file is /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab.log
+DEBUG 2024-12-11 10:46:57.955 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2024-12-11 10:46:57.956 UTC: 	 Running on: Linux ui02.recas.ba.infn.it 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2024-12-11 10:46:57.956 UTC: 	 Not using Singularity
+DEBUG 2024-12-11 10:46:57.956 UTC: 	 Operating System: CentOS Linux 7 (Core)
+DEBUG 2024-12-11 10:46:57.956 UTC: 	 Executing command: 'submit'
+DEBUG 2024-12-11 10:46:57.956 UTC: 	 Found CRAB cache file /lustrehome/felicenenna/.crab3
+INFO 2024-12-11 10:46:57.957 UTC: 	 Will use CRAB configuration file crab_MCRun4_DsTau3Mu_cfg.py
+DEBUG 2024-12-11 10:46:57.957 UTC: 	 Loading CRAB configuration file.
+DEBUG 2024-12-11 10:46:57.989 UTC: 	 Will use CRAB plugin ANALYSIS (i.e. will run an analysis job type).
+ERROR 2024-12-11 10:46:57.989 UTC: 	 Working area '/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_SkimTau3mu_MCRun4_DsTau3Mu' already exists 
+Please change the requestName in the config file
+ERROR 2024-12-11 10:46:57.989 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/submit.py", line 37, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 328, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/ClientUtilities.py", line 392, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_SkimTau3mu_MCRun4_DsTau3Mu' already exists 
+Please change the requestName in the config file
+INFO 2024-12-11 10:46:57.992 UTC: 	 Log file is /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab.log
+DEBUG 2024-12-11 10:54:43.831 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2024-12-11 10:54:43.831 UTC: 	 Running on: Linux ui02.recas.ba.infn.it 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2024-12-11 10:54:43.831 UTC: 	 Not using Singularity
+DEBUG 2024-12-11 10:54:43.831 UTC: 	 Operating System: CentOS Linux 7 (Core)
+DEBUG 2024-12-11 10:54:43.831 UTC: 	 Executing command: 'submit'
+DEBUG 2024-12-11 10:54:43.832 UTC: 	 Found CRAB cache file /lustrehome/felicenenna/.crab3
+INFO 2024-12-11 10:54:43.832 UTC: 	 Will use CRAB configuration file crab_MCRun4_BdTau3Mu_cfg.py
+DEBUG 2024-12-11 10:54:43.833 UTC: 	 Loading CRAB configuration file.
+DEBUG 2024-12-11 10:54:43.866 UTC: 	 Will use CRAB plugin ANALYSIS (i.e. will run an analysis job type).
+ERROR 2024-12-11 10:54:43.867 UTC: 	 Working area '/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_SkimTau3mu_MCRun4_BdTau3Mu' already exists 
+Please change the requestName in the config file
+ERROR 2024-12-11 10:54:43.867 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/submit.py", line 37, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 328, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/ClientUtilities.py", line 392, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_SkimTau3mu_MCRun4_BdTau3Mu' already exists 
+Please change the requestName in the config file
+INFO 2024-12-11 10:54:43.870 UTC: 	 Log file is /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab.log
+DEBUG 2024-12-11 10:54:51.607 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2024-12-11 10:54:51.608 UTC: 	 Running on: Linux ui02.recas.ba.infn.it 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2024-12-11 10:54:51.608 UTC: 	 Not using Singularity
+DEBUG 2024-12-11 10:54:51.608 UTC: 	 Operating System: CentOS Linux 7 (Core)
+DEBUG 2024-12-11 10:54:51.608 UTC: 	 Executing command: 'submit'
+DEBUG 2024-12-11 10:54:51.608 UTC: 	 Found CRAB cache file /lustrehome/felicenenna/.crab3
+INFO 2024-12-11 10:54:51.609 UTC: 	 Will use CRAB configuration file crab_MCRun4_BuTau3Mu_cfg.py
+DEBUG 2024-12-11 10:54:51.609 UTC: 	 Loading CRAB configuration file.
+DEBUG 2024-12-11 10:54:51.637 UTC: 	 Will use CRAB plugin ANALYSIS (i.e. will run an analysis job type).
+ERROR 2024-12-11 10:54:51.638 UTC: 	 Working area '/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_SkimTau3mu_MCRun4_BuTau3Mu' already exists 
+Please change the requestName in the config file
+ERROR 2024-12-11 10:54:51.639 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/submit.py", line 37, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 328, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/ClientUtilities.py", line 392, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_SkimTau3mu_MCRun4_BuTau3Mu' already exists 
+Please change the requestName in the config file
+INFO 2024-12-11 10:54:51.642 UTC: 	 Log file is /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab.log
+DEBUG 2024-12-11 10:54:59.456 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2024-12-11 10:54:59.457 UTC: 	 Running on: Linux ui02.recas.ba.infn.it 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2024-12-11 10:54:59.457 UTC: 	 Not using Singularity
+DEBUG 2024-12-11 10:54:59.457 UTC: 	 Operating System: CentOS Linux 7 (Core)
+DEBUG 2024-12-11 10:54:59.457 UTC: 	 Executing command: 'submit'
+DEBUG 2024-12-11 10:54:59.457 UTC: 	 Found CRAB cache file /lustrehome/felicenenna/.crab3
+INFO 2024-12-11 10:54:59.458 UTC: 	 Will use CRAB configuration file crab_MCRun4_DsTau3Mu_cfg.py
+DEBUG 2024-12-11 10:54:59.458 UTC: 	 Loading CRAB configuration file.
+DEBUG 2024-12-11 10:54:59.489 UTC: 	 Will use CRAB plugin ANALYSIS (i.e. will run an analysis job type).
+ERROR 2024-12-11 10:54:59.490 UTC: 	 Working area '/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_SkimTau3mu_MCRun4_DsTau3Mu' already exists 
+Please change the requestName in the config file
+ERROR 2024-12-11 10:54:59.491 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/submit.py", line 37, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 328, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/ClientUtilities.py", line 392, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_SkimTau3mu_MCRun4_DsTau3Mu' already exists 
+Please change the requestName in the config file
+INFO 2024-12-11 10:54:59.494 UTC: 	 Log file is /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab.log
+DEBUG 2024-12-11 11:07:44.437 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2024-12-11 11:07:44.437 UTC: 	 Running on: Linux ui02.recas.ba.infn.it 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2024-12-11 11:07:44.437 UTC: 	 Not using Singularity
+DEBUG 2024-12-11 11:07:44.438 UTC: 	 Operating System: CentOS Linux 7 (Core)
+DEBUG 2024-12-11 11:07:44.438 UTC: 	 Executing command: 'submit'
+DEBUG 2024-12-11 11:07:44.438 UTC: 	 Found CRAB cache file /lustrehome/felicenenna/.crab3
+INFO 2024-12-11 11:07:44.441 UTC: 	 Will use CRAB configuration file crab_MCRun4_BdTau3Mu_cfg.py
+DEBUG 2024-12-11 11:07:44.441 UTC: 	 Loading CRAB configuration file.
+DEBUG 2024-12-11 11:07:44.516 UTC: 	 Will use CRAB plugin ANALYSIS (i.e. will run an analysis job type).
+ERROR 2024-12-11 11:07:44.516 UTC: 	 Working area '/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_Tau3mu_MCRun4_BdTau3Mu_private' already exists 
+Please change the requestName in the config file
+ERROR 2024-12-11 11:07:44.516 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/submit.py", line 37, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 328, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/ClientUtilities.py", line 392, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_Tau3mu_MCRun4_BdTau3Mu_private' already exists 
+Please change the requestName in the config file
+INFO 2024-12-11 11:07:44.556 UTC: 	 Log file is /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab.log
+DEBUG 2024-12-11 11:07:53.449 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2024-12-11 11:07:53.450 UTC: 	 Running on: Linux ui02.recas.ba.infn.it 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2024-12-11 11:07:53.450 UTC: 	 Not using Singularity
+DEBUG 2024-12-11 11:07:53.450 UTC: 	 Operating System: CentOS Linux 7 (Core)
+DEBUG 2024-12-11 11:07:53.450 UTC: 	 Executing command: 'submit'
+DEBUG 2024-12-11 11:07:53.450 UTC: 	 Found CRAB cache file /lustrehome/felicenenna/.crab3
+INFO 2024-12-11 11:07:53.451 UTC: 	 Will use CRAB configuration file crab_MCRun4_BuTau3Mu_cfg.py
+DEBUG 2024-12-11 11:07:53.451 UTC: 	 Loading CRAB configuration file.
+DEBUG 2024-12-11 11:07:53.508 UTC: 	 Will use CRAB plugin ANALYSIS (i.e. will run an analysis job type).
+ERROR 2024-12-11 11:07:53.508 UTC: 	 Working area '/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_MCRun4_BuTau3Mu_private' already exists 
+Please change the requestName in the config file
+ERROR 2024-12-11 11:07:53.508 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/submit.py", line 37, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 328, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/ClientUtilities.py", line 392, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_MCRun4_BuTau3Mu_private' already exists 
+Please change the requestName in the config file
+INFO 2024-12-11 11:07:53.546 UTC: 	 Log file is /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab.log
+DEBUG 2024-12-11 11:08:02.124 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2024-12-11 11:08:02.124 UTC: 	 Running on: Linux ui02.recas.ba.infn.it 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2024-12-11 11:08:02.124 UTC: 	 Not using Singularity
+DEBUG 2024-12-11 11:08:02.125 UTC: 	 Operating System: CentOS Linux 7 (Core)
+DEBUG 2024-12-11 11:08:02.125 UTC: 	 Executing command: 'submit'
+DEBUG 2024-12-11 11:08:02.125 UTC: 	 Found CRAB cache file /lustrehome/felicenenna/.crab3
+INFO 2024-12-11 11:08:02.126 UTC: 	 Will use CRAB configuration file crab_MCRun4_DsTau3Mu_cfg.py
+DEBUG 2024-12-11 11:08:02.127 UTC: 	 Loading CRAB configuration file.
+DEBUG 2024-12-11 11:08:02.179 UTC: 	 Will use CRAB plugin ANALYSIS (i.e. will run an analysis job type).
+ERROR 2024-12-11 11:08:02.180 UTC: 	 Working area '/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_MCRun4_DsTau3Mu_private' already exists 
+Please change the requestName in the config file
+ERROR 2024-12-11 11:08:02.180 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/submit.py", line 37, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 328, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/ClientUtilities.py", line 392, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_MCRun4_DsTau3Mu_private' already exists 
+Please change the requestName in the config file
+INFO 2024-12-11 11:08:02.184 UTC: 	 Log file is /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab.log
+DEBUG 2024-12-11 11:23:03.208 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2024-12-11 11:23:03.208 UTC: 	 Running on: Linux ui02.recas.ba.infn.it 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2024-12-11 11:23:03.208 UTC: 	 Not using Singularity
+DEBUG 2024-12-11 11:23:03.208 UTC: 	 Operating System: CentOS Linux 7 (Core)
+DEBUG 2024-12-11 11:23:03.208 UTC: 	 Executing command: 'submit'
+DEBUG 2024-12-11 11:23:03.211 UTC: 	 Found CRAB cache file /lustrehome/felicenenna/.crab3
+INFO 2024-12-11 11:23:03.217 UTC: 	 Will use CRAB configuration file crab_MCRun4_BdTau3Mu_cfg.py
+DEBUG 2024-12-11 11:23:03.218 UTC: 	 Loading CRAB configuration file.
+DEBUG 2024-12-11 11:23:03.288 UTC: 	 Will use CRAB plugin ANALYSIS (i.e. will run an analysis job type).
+ERROR 2024-12-11 11:23:03.288 UTC: 	 Working area '/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_Tau3mu_MCRun4_BdTau3Mu_private' already exists 
+Please change the requestName in the config file
+ERROR 2024-12-11 11:23:03.288 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/submit.py", line 37, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 328, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/ClientUtilities.py", line 392, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_Tau3mu_MCRun4_BdTau3Mu_private' already exists 
+Please change the requestName in the config file
+INFO 2024-12-11 11:23:03.322 UTC: 	 Log file is /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab.log
+DEBUG 2024-12-11 11:23:12.731 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2024-12-11 11:23:12.731 UTC: 	 Running on: Linux ui02.recas.ba.infn.it 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2024-12-11 11:23:12.731 UTC: 	 Not using Singularity
+DEBUG 2024-12-11 11:23:12.731 UTC: 	 Operating System: CentOS Linux 7 (Core)
+DEBUG 2024-12-11 11:23:12.731 UTC: 	 Executing command: 'submit'
+DEBUG 2024-12-11 11:23:12.732 UTC: 	 Found CRAB cache file /lustrehome/felicenenna/.crab3
+INFO 2024-12-11 11:23:12.735 UTC: 	 Will use CRAB configuration file crab_MCRun4_BuTau3Mu_cfg.py
+DEBUG 2024-12-11 11:23:12.736 UTC: 	 Loading CRAB configuration file.
+DEBUG 2024-12-11 11:23:12.822 UTC: 	 Will use CRAB plugin ANALYSIS (i.e. will run an analysis job type).
+ERROR 2024-12-11 11:23:12.822 UTC: 	 Working area '/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_MCRun4_BuTau3Mu_private' already exists 
+Please change the requestName in the config file
+ERROR 2024-12-11 11:23:12.822 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/submit.py", line 37, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 328, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/ClientUtilities.py", line 392, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_MCRun4_BuTau3Mu_private' already exists 
+Please change the requestName in the config file
+INFO 2024-12-11 11:23:12.826 UTC: 	 Log file is /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab.log
+DEBUG 2024-12-11 11:23:22.524 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2024-12-11 11:23:22.524 UTC: 	 Running on: Linux ui02.recas.ba.infn.it 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2024-12-11 11:23:22.524 UTC: 	 Not using Singularity
+DEBUG 2024-12-11 11:23:22.524 UTC: 	 Operating System: CentOS Linux 7 (Core)
+DEBUG 2024-12-11 11:23:22.524 UTC: 	 Executing command: 'submit'
+DEBUG 2024-12-11 11:23:22.525 UTC: 	 Found CRAB cache file /lustrehome/felicenenna/.crab3
+INFO 2024-12-11 11:23:22.540 UTC: 	 Will use CRAB configuration file crab_MCRun4_DsTau3Mu_cfg.py
+DEBUG 2024-12-11 11:23:22.540 UTC: 	 Loading CRAB configuration file.
+DEBUG 2024-12-11 11:23:22.622 UTC: 	 Will use CRAB plugin ANALYSIS (i.e. will run an analysis job type).
+ERROR 2024-12-11 11:23:22.622 UTC: 	 Working area '/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_MCRun4_DsTau3Mu_private' already exists 
+Please change the requestName in the config file
+ERROR 2024-12-11 11:23:22.623 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/submit.py", line 37, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 328, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/ClientUtilities.py", line 392, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_MCRun4_DsTau3Mu_private' already exists 
+Please change the requestName in the config file
+INFO 2024-12-11 11:23:22.629 UTC: 	 Log file is /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab.log
+DEBUG 2024-12-11 15:50:30.470 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2024-12-11 15:50:30.471 UTC: 	 Running on: Linux ui02.recas.ba.infn.it 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2024-12-11 15:50:30.471 UTC: 	 Not using Singularity
+DEBUG 2024-12-11 15:50:30.471 UTC: 	 Operating System: CentOS Linux 7 (Core)
+DEBUG 2024-12-11 15:50:30.471 UTC: 	 Executing command: 'kill'
+DEBUG 2024-12-11 15:50:30.471 UTC: 	 Found CRAB cache file /lustrehome/felicenenna/.crab3
+DEBUG 2024-12-11 15:51:03.080 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2024-12-11 15:51:03.080 UTC: 	 Running on: Linux ui02.recas.ba.infn.it 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2024-12-11 15:51:03.080 UTC: 	 Not using Singularity
+DEBUG 2024-12-11 15:51:03.080 UTC: 	 Operating System: CentOS Linux 7 (Core)
+DEBUG 2024-12-11 15:51:03.080 UTC: 	 Executing command: 'kill'
+DEBUG 2024-12-11 15:51:03.081 UTC: 	 Found CRAB cache file /lustrehome/felicenenna/.crab3
+ERROR 2024-12-11 15:51:03.082 UTC: 	 Cannot find .requestcache file in CRAB project directory /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects
+ERROR 2024-12-11 15:51:03.082 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 281, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 695, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 537, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 531, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/ClientUtilities.py", line 445, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects
+INFO 2024-12-11 15:51:03.097 UTC: 	 Log file is /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab.log
+DEBUG 2024-12-11 18:49:46.964 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2024-12-11 18:49:46.964 UTC: 	 Running on: Linux ui02.recas.ba.infn.it 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2024-12-11 18:49:46.964 UTC: 	 Not using Singularity
+DEBUG 2024-12-11 18:49:46.964 UTC: 	 Operating System: CentOS Linux 7 (Core)
+DEBUG 2024-12-11 18:49:46.964 UTC: 	 Executing command: 'submit'
+DEBUG 2024-12-11 18:49:46.964 UTC: 	 Found CRAB cache file /lustrehome/felicenenna/.crab3
+INFO 2024-12-11 18:49:46.967 UTC: 	 Will use CRAB configuration file crab_MCRun4_BdTau3Mu_cfg.py
+DEBUG 2024-12-11 18:49:46.967 UTC: 	 Loading CRAB configuration file.
+DEBUG 2024-12-11 18:49:47.016 UTC: 	 Will use CRAB plugin ANALYSIS (i.e. will run an analysis job type).
+ERROR 2024-12-11 18:49:47.019 UTC: 	 Working area '/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_MCRun4_BdTau3Mu_private' already exists 
+Please change the requestName in the config file
+ERROR 2024-12-11 18:49:47.019 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/submit.py", line 37, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 328, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/ClientUtilities.py", line 392, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_MCRun4_BdTau3Mu_private' already exists 
+Please change the requestName in the config file
+INFO 2024-12-11 18:49:47.023 UTC: 	 Log file is /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab.log
+DEBUG 2024-12-11 18:49:55.299 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2024-12-11 18:49:55.299 UTC: 	 Running on: Linux ui02.recas.ba.infn.it 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2024-12-11 18:49:55.299 UTC: 	 Not using Singularity
+DEBUG 2024-12-11 18:49:55.299 UTC: 	 Operating System: CentOS Linux 7 (Core)
+DEBUG 2024-12-11 18:49:55.299 UTC: 	 Executing command: 'submit'
+DEBUG 2024-12-11 18:49:55.299 UTC: 	 Found CRAB cache file /lustrehome/felicenenna/.crab3
+INFO 2024-12-11 18:49:55.300 UTC: 	 Will use CRAB configuration file crab_MCRun4_BuTau3Mu_cfg.py
+DEBUG 2024-12-11 18:49:55.300 UTC: 	 Loading CRAB configuration file.
+DEBUG 2024-12-11 18:49:55.353 UTC: 	 Will use CRAB plugin ANALYSIS (i.e. will run an analysis job type).
+ERROR 2024-12-11 18:49:55.355 UTC: 	 Working area '/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_MCRun4_BuTau3Mu_private' already exists 
+Please change the requestName in the config file
+ERROR 2024-12-11 18:49:55.356 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/submit.py", line 37, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 328, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/ClientUtilities.py", line 392, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_MCRun4_BuTau3Mu_private' already exists 
+Please change the requestName in the config file
+INFO 2024-12-11 18:49:55.361 UTC: 	 Log file is /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab.log
+DEBUG 2024-12-11 18:50:03.861 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2024-12-11 18:50:03.861 UTC: 	 Running on: Linux ui02.recas.ba.infn.it 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2024-12-11 18:50:03.861 UTC: 	 Not using Singularity
+DEBUG 2024-12-11 18:50:03.861 UTC: 	 Operating System: CentOS Linux 7 (Core)
+DEBUG 2024-12-11 18:50:03.861 UTC: 	 Executing command: 'submit'
+DEBUG 2024-12-11 18:50:03.861 UTC: 	 Found CRAB cache file /lustrehome/felicenenna/.crab3
+INFO 2024-12-11 18:50:03.862 UTC: 	 Will use CRAB configuration file crab_MCRun4_DsTau3Mu_cfg.py
+DEBUG 2024-12-11 18:50:03.862 UTC: 	 Loading CRAB configuration file.
+DEBUG 2024-12-11 18:50:03.900 UTC: 	 Will use CRAB plugin ANALYSIS (i.e. will run an analysis job type).
+ERROR 2024-12-11 18:50:03.902 UTC: 	 Working area '/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_MCRun4_DsTau3Mu_private' already exists 
+Please change the requestName in the config file
+ERROR 2024-12-11 18:50:03.902 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/submit.py", line 37, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 328, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/ClientUtilities.py", line 392, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_MCRun4_DsTau3Mu_private' already exists 
+Please change the requestName in the config file
+INFO 2024-12-11 18:50:03.907 UTC: 	 Log file is /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab.log
+DEBUG 2024-12-11 18:51:48.633 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2024-12-11 18:51:48.634 UTC: 	 Running on: Linux ui02.recas.ba.infn.it 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2024-12-11 18:51:48.634 UTC: 	 Not using Singularity
+DEBUG 2024-12-11 18:51:48.634 UTC: 	 Operating System: CentOS Linux 7 (Core)
+DEBUG 2024-12-11 18:51:48.634 UTC: 	 Executing command: 'kill'
+DEBUG 2024-12-11 18:51:48.634 UTC: 	 Found CRAB cache file /lustrehome/felicenenna/.crab3
+ERROR 2024-12-11 18:51:48.635 UTC: 	 Cannot find .requestcache file in CRAB project directory /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_MCRun4_BuTau3Mu_private
+ERROR 2024-12-11 18:51:48.635 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 281, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 695, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 537, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 531, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/ClientUtilities.py", line 445, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_MCRun4_BuTau3Mu_private
+INFO 2024-12-11 18:51:48.639 UTC: 	 Log file is /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab.log
+DEBUG 2024-12-17 21:13:11.643 UTC: 	 CRAB Client version: v3.241125
+DEBUG 2024-12-17 21:13:11.643 UTC: 	 Running on: Linux ui02.recas.ba.infn.it 3.10.0-1160.80.1.el7.x86_64 #1 SMP Tue Nov 8 15:48:59 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux
+DEBUG 2024-12-17 21:13:11.643 UTC: 	 Not using Singularity
+DEBUG 2024-12-17 21:13:11.643 UTC: 	 Operating System: CentOS Linux 7 (Core)
+DEBUG 2024-12-17 21:13:11.643 UTC: 	 Executing command: 'submit'
+DEBUG 2024-12-17 21:13:11.643 UTC: 	 Found CRAB cache file /lustrehome/felicenenna/.crab3
+INFO 2024-12-17 21:13:11.645 UTC: 	 Will use CRAB configuration file crab_MCRun4_DsTau3Mu_cfg.py
+DEBUG 2024-12-17 21:13:11.645 UTC: 	 Loading CRAB configuration file.
+DEBUG 2024-12-17 21:13:11.682 UTC: 	 Will use CRAB plugin ANALYSIS (i.e. will run an analysis job type).
+ERROR 2024-12-17 21:13:11.684 UTC: 	 Working area '/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_MCRun4_DsTau3Mu_private' already exists 
+Please change the requestName in the config file
+ERROR 2024-12-17 21:13:11.684 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 157, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/bin/crab.py", line 135, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])  # the crab command to be executed
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/submit.py", line 37, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/Commands/SubCommand.py", line 328, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.241125.00/lib/CRABClient/ClientUtilities.py", line 392, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab_projects/crab_MCRun4_DsTau3Mu_private' already exists 
+Please change the requestName in the config file
+INFO 2024-12-17 21:13:11.716 UTC: 	 Log file is /lustrehome/felicenenna/tau3mu/CMSSW_14_0_17/src/GenAnalyser/GenAnalyzer/CrabSubmission/crab.log

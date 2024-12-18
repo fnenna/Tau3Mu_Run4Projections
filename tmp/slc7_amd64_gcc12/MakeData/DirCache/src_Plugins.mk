@@ -1,0 +1,3 @@
+ALL_SUBSYSTEMS+=Plugins
+subdirs_src_Plugins = src_Plugins_MiniAnaTau3Mu src_Plugins_TrackFromCandProducer src_Plugins_RecoMuonAnalyzer src_Plugins_SimpleEventCounter src_Plugins_DsPhiPiTreeMakerMINI src_Plugins_PFCandFilter
+subdirs_src += src_Plugins

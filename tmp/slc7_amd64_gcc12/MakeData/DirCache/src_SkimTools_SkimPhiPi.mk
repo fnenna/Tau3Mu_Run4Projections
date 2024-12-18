@@ -1,0 +1,2 @@
+ALL_PACKAGES += SkimTools/SkimPhiPi
+subdirs_src_SkimTools_SkimPhiPi := src_SkimTools_SkimPhiPi_python src_SkimTools_SkimPhiPi_test

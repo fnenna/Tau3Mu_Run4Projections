@@ -1,0 +1,1 @@
+PluginsSimpleEventCounterAuto Plugins/SimpleEventCounter/plugins/SimpleEventCounter.cc

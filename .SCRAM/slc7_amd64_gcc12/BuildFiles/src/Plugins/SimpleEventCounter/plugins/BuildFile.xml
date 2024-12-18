@@ -1,0 +1,63 @@
+{
+  "BUILDPRODUCTS": {
+    "LIBRARY": {
+      "PluginsSimpleEventCounterAuto": {
+        "FILES": "",
+        "TYPE": "lib"
+      }
+    }
+  },
+  "FLAGS": {
+    "EDM_PLUGIN": [
+      "1",
+      "1"
+    ]
+  },
+  "USE": [
+    "FWCore/Framework",
+    "FWCore/PluginManager",
+    "FWCore/ParameterSet",
+    "RecoMuon/MuonIdentification",
+    "DataFormats/HepMCCandidate",
+    "DataFormats/Candidate",
+    "DataFormats/Math",
+    "FWCore/ServiceRegistry",
+    "Geometry/CommonTopologies",
+    "Geometry/GEMGeometry",
+    "CommonTools/UtilAlgos",
+    "Utilities/General",
+    "DataFormats/MuonReco",
+    "TrackingTools/TransientTrack",
+    "clhep",
+    "DataFormats/GEMRecHit",
+    "DataFormats/DetId",
+    "DataFormats/GeometrySurface",
+    "DataFormats/GeometryVector",
+    "DataFormats/MuonDetId",
+    "DataFormats/GEMDigi",
+    "Geometry/CommonDetUnit",
+    "Geometry/RPCGeometry",
+    "Geometry/Records",
+    "MagneticField/Records",
+    "MagneticField/Engine",
+    "SimDataFormats/GeneratorProducts ",
+    "SimDataFormats/Track",
+    "SimDataFormats/TrackingHit",
+    "SimDataFormats/Vertex",
+    "SimGeneral/HepPDTRecord",
+    "SimDataFormats/TrackingAnalysis",
+    "RecoMuon/DetLayers",
+    "RecoMuon/Records",
+    "rootcore",
+    "rootgraphics",
+    "root",
+    "boost",
+    "RecoMuon/StandAloneTrackFinder",
+    "RecoMuon/TrackingTools",
+    "TrackingTools/DetLayers",
+    "TrackingTools/PatternTools",
+    "DataFormats/Common",
+    "DataFormats/TrackReco",
+    "DataFormats/TrajectorySeed"
+  ]
+}

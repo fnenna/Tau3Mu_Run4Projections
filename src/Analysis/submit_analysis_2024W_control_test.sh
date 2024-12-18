@@ -1,0 +1,15 @@
+#!/bin/bash
+chmod 777 -R *
+cd 2024W_control_test
+echo condor_submit my_HTCondor_data_control_2024W_control_0.job -name ettore
+condor_submit my_HTCondor_data_control_2024W_control_0.job -name ettore
+echo condor_submit my_HTCondor_data_control_2024W_control_1.job -name ettore
+condor_submit my_HTCondor_data_control_2024W_control_1.job -name ettore
+echo condor_submit my_HTCondor_data_control_2024W_control_2.job -name ettore
+condor_submit my_HTCondor_data_control_2024W_control_2.job -name ettore
+echo condor_submit my_HTCondor_data_control_2024W_control_3.job -name ettore
+condor_submit my_HTCondor_data_control_2024W_control_3.job -name ettore
+echo condor_submit my_HTCondor_data_control_2024W_control_4.job -name ettore
+condor_submit my_HTCondor_data_control_2024W_control_4.job -name ettore
+echo condor_submit my_HTCondor_data_control_2024W_control_5.job -name ettore
+condor_submit my_HTCondor_data_control_2024W_control_5.job -name ettore

@@ -1,0 +1,3 @@
+ALL_SUBSYSTEMS+=CrabSubmission
+subdirs_src_CrabSubmission = src_CrabSubmission_Data_2023 src_CrabSubmission_MC_2023 src_CrabSubmission_Data_2024 src_CrabSubmission_Data src_CrabSubmission_MC
+subdirs_src += src_CrabSubmission

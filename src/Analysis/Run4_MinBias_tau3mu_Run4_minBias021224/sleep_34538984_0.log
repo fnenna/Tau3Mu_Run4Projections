@@ -1,0 +1,29 @@
+000 (34538984.000.000) 2024-12-05 18:30:30 Job submitted from host: <90.147.169.224:9618?addrs=90.147.169.224-9618&alias=ettore.recas.ba.infn.it&noUDP&sock=schedd_7835_bc9e>
+...
+001 (34538984.000.000) 2024-12-05 18:30:47 Job executing on host: <90.147.168.189:9618?addrs=90.147.168.189-9618&alias=wn-8-8-4.recas.ba.infn.it&noUDP&sock=startd_3252_2e13>
+...
+006 (34538984.000.000) 2024-12-05 18:30:56 Image size of job updated: 257588
+	11  -  MemoryUsage of job (MB)
+	10680  -  ResidentSetSize of job (KB)
+...
+006 (34538984.000.000) 2024-12-05 18:32:00 Image size of job updated: 723676
+	11  -  MemoryUsage of job (MB)
+	10680  -  ResidentSetSize of job (KB)
+...
+005 (34538984.000.000) 2024-12-05 18:32:00 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:00:39, Sys 0 00:00:02  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:39, Sys 0 00:00:02  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+	Partitionable Resources :    Usage  Request Allocated 
+	   Cpus                 :                 1         1 
+	   Disk (KB)            :        2        2    419696 
+	   Memory (MB)          :       11      500       512 
+
+	Job terminated of its own accord at 2024-12-05T17:32:00Z.
+...

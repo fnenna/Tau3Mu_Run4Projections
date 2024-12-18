@@ -1,0 +1,14 @@
+pluginGenAnalyserGenAnalyzerAuto.so GenAnalyzer CMS%EDM%Framework%Module
+pluginGenAnalyserGenAnalyzerAuto.so GenAnalyzer CMS%EDM%Framework%ParameterSet%Description
+pluginPluginsDsPhiPiTreeMakerMINIAuto.so DsPhiPiTreeMakerMINI CMS%EDM%Framework%Module
+pluginPluginsDsPhiPiTreeMakerMINIAuto.so DsPhiPiTreeMakerMINI CMS%EDM%Framework%ParameterSet%Description
+pluginPluginsMiniAnaTau3MuAuto.so MiniAnaTau3Mu CMS%EDM%Framework%Module
+pluginPluginsMiniAnaTau3MuAuto.so MiniAnaTau3Mu CMS%EDM%Framework%ParameterSet%Description
+pluginPluginsPFCandFilterAuto.so PFCandFilter CMS%EDM%Framework%Module
+pluginPluginsPFCandFilterAuto.so PFCandFilter CMS%EDM%Framework%ParameterSet%Description
+pluginPluginsRecoMuonAnalyzerAuto.so RecoMuonAnalyzer CMS%EDM%Framework%Module
+pluginPluginsRecoMuonAnalyzerAuto.so RecoMuonAnalyzer CMS%EDM%Framework%ParameterSet%Description
+pluginPluginsSimpleEventCounterAuto.so SimpleEventCounter CMS%EDM%Framework%Module
+pluginPluginsSimpleEventCounterAuto.so SimpleEventCounter CMS%EDM%Framework%ParameterSet%Description
+pluginPluginsTrackFromCandProducerAuto.so TrackFromCandProducer CMS%EDM%Framework%Module
+pluginPluginsTrackFromCandProducerAuto.so TrackFromCandProducer CMS%EDM%Framework%ParameterSet%Description
