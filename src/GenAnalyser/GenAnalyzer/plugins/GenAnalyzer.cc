@@ -130,16 +130,52 @@
 #include "DataFormats/TrackReco/interface/TrackToTrackMap.h"
 #include "DataFormats/TrackReco/interface/Track.h"
 #include "DataFormats/TrackReco/interface/TrackFwd.h"
+
+#include "DataFormats/MuonDetId/interface/ME0DetId.h"
+#include "DataFormats/MuonDetId/interface/MuonSubdetId.h"
+#include "DataFormats/MuonDetId/interface/GEMDetId.h"
+#include "Geometry/Records/interface/MuonGeometryRecord.h"
+#include "FWCore/Framework/interface/ESHandle.h"
+
+
+#include "TrackingTools/TransientTrack/interface/TransientTrackBuilder.h"
+#include "TrackingTools/Records/interface/TransientTrackRecord.h"
+
+#include "Geometry/DTGeometry/interface/DTGeometry.h"
+
 //
 // class declaration
-//
+
+namespace nano_mu {
+
+  template <class T, class R, edm::Transition TR = edm::Transition::Event>
+  class ESTokenHandle {
+  public:
+    /// Constructor
+    ESTokenHandle(edm::ConsumesCollector&& collector, const std::string& label = "")
+        : m_token{collector.template esConsumes<TR>(edm::ESInputTag{"", label})} {}
+
+    ///Get Handle from ES
+    void getFromES(const edm::EventSetup& environment) { m_handle = environment.getHandle(m_token); }
+
+    /// Check validity
+    bool isValid() { return m_handle.isValid(); }
+
+    /// Return handle
+    T const* operator->() { return m_handle.product(); }
+
+  private:
+    edm::ESGetToken<T, R> m_token;
+    edm::ESHandle<T> m_handle;
+  };
+}  // namespace nano_mu
 
 // If the analyzer does not use TFileService, please remove
 // the template argument to the base class so the class inherits
 // from  edm::one::EDAnalyzer<>
 // This will improve performance in multithreaded jobs.
 
-using reco::TrackCollection;
+//using reco::TrackCollection;
 
 class GenAnalyzer : public edm::one::EDAnalyzer<edm::one::SharedResources> {
 public:
@@ -158,12 +194,15 @@ private:
   edm::EDGetTokenT<edm::View<reco::GenParticle> > genParticles_;
   //edm::EDGetTokenT<edm::View<pat::Muon> > muons_;
   edm::EDGetTokenT<edm::View<reco::Muon> > muons_;
+  edm::ESGetToken<TransientTrackBuilder, TransientTrackRecord> theTransientTrackBuilder_;
+
 
   //tree
   TTree*      tree_;
   edm::Service<TFileService> fs;
   
   std::vector<int> GenParticle_PdgId, GenParticle_MotherPdgId, GenParticle_GrandMotherPdgId;
+  std::vector<int> N_of_hits_GE11, N_of_hits_GE21, N_of_hits_ME0;
   std::vector<double> GenParticle_P, GenParticle_Pt, GenParticle_Eta,    GenParticle_Phi, GenParticle_vx, GenParticle_vy, GenParticle_vz;
   std::vector<float>  MuonPt, MuonEta, MuonPhi;
   std::vector<double> MuonEnergy,  MuonCharge;
@@ -187,8 +226,11 @@ private:
 //
 GenAnalyzer::GenAnalyzer(const edm::ParameterSet& iConfig){
   genParticles_ = consumes<edm::View<reco::GenParticle>  > (iConfig.getParameter<edm::InputTag>("genParticleLabel"));
-  //muons_ = consumes<edm::View<pat::Muon>  > (iConfig.getParameter<edm::InputTag>("muonLabel"));
   muons_ = consumes<edm::View<reco::Muon>  > (iConfig.getParameter<edm::InputTag>("muonLabel"));
+  //muons_ = consumes<edm::View<pat::Muon>  > (iConfig.getParameter<edm::InputTag>("muonLabel"));
+  theTransientTrackBuilder_ = esConsumes<TransientTrackBuilder, TransientTrackRecord>(edm::ESInputTag("", "TransientTrackBuilder"));
+
+  //muons_ = consumes<edm::View<reco::Muon>  > (iConfig.getParameter<edm::InputTag>("muonLabel"));
 }
 
 GenAnalyzer::~GenAnalyzer() {
@@ -211,7 +253,7 @@ void GenAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetu
   //edm::Handle< edm::View<pat::Muon> > muons;
   edm::Handle< edm::View<reco::Muon> > muons;
   iEvent.getByToken(muons_, muons);
-
+  edm::ESHandle<TransientTrackBuilder> m_transientTrackBuilder = iSetup.getHandle(theTransientTrackBuilder_); 
 
 
   uint j=0;
@@ -219,7 +261,7 @@ void GenAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetu
   std::vector<int> genPidx;
   //uint tauRaw=-999; //int DsRaw=-999;
   
-//          cout<<"****************GenLevel Info Begin********************"<<endl;
+  //          cout<<"****************GenLevel Info Begin********************"<<endl;
   for(edm::View<reco::GenParticle>::const_iterator gp=genParticles->begin(); gp!=genParticles->end(), j<ngenP; ++gp , ++j){
       //if(fabs(gp->pdgId())==15) tauRaw = j;
 
@@ -275,6 +317,10 @@ void GenAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetu
   uint k=0;
   for(edm::View<reco::Muon>::const_iterator mu=muons->begin(); mu!=muons->end(), k<muons->size(); ++mu, ++k){    
     //Basic Kinematics
+    bool is_gem = false;
+    //bool is_me0 = false;
+    //bool is_ge11 = false;
+    //bool is_ge21 = false;
     MuonPt.push_back(mu->pt());
     MuonEta.push_back(mu->eta());
     MuonPhi.push_back(mu->phi());
@@ -311,12 +357,87 @@ void GenAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetu
     Muon_isTimeValid.push_back(mu->isTimeValid());
     Muon_isIsolationValid.push_back(mu->isIsolationValid());
     Muon_numberOfMatchedStations.push_back(mu->numberOfMatchedStations());
-    Muon_numberOfMatches.push_back(mu->numberOfMatches(reco::Muon::SegmentArbitration));
+    //Muon_numberOfMatches.push_back(mu->numberOfMatches(reco::Muon::SegmentArbitration));
     
     Muon_timeAtIpInOut.push_back(mu->time().timeAtIpInOut);
     Muon_timeAtIpInOutErr.push_back(mu->time().timeAtIpInOutErr);
-  }
 
+    if (muons.isValid() && m_transientTrackBuilder.isValid()) {
+    //loop on recoMuons
+    for (const auto& muon : (*muons)) {
+      if (!muon.outerTrack().isNull()){
+        std::cout<<"Muon track is not null" <<std::endl;
+      const auto track = muon.outerTrack().get();
+        std::cout<<"The track is got" <<std::endl;
+      const auto&& transient_track = m_transientTrackBuilder->build(track);
+        std::cout<<"The transient track is got" <<std::endl;
+      const auto& htp = transient_track.hitPattern();
+      const auto outerTrackRef = muon.outerTrack();
+        std::cout<<"0)" <<std::endl;
+      // we want to retrieve the reco hits in the muon system
+      auto recHitMu = outerTrackRef->recHitsBegin();
+      auto recHitMuEnd = outerTrackRef->recHitsEnd();
+        std::cout<<"A)" <<std::endl;
+
+
+      //loop on recHits which form the outerTrack
+      for (; recHitMu != recHitMuEnd; ++recHitMu) {
+        DetId detId{(*recHitMu)->geographicalId()};
+        std::cout<<"B)" <<std::endl;
+        if (detId.det() == DetId::Muon && detId.subdetId() == MuonSubdetId::GEM) {
+          is_gem = true;
+          std::cout<<"C)" <<std::endl;
+          const GEMDetId gem_id{detId};
+              // ME11 chambers consist of 2 subchambers: ME11a, ME11b.
+              // In CMSSW they are referred as Stat. 1 Ring 1, Stat. 1 Ring. 4 respectively
+          /*
+          if (gem_id.station() == 0){
+            is_me0 = true;
+          }
+          if (gem_id.station() == 1){
+            is_ge11 = true;
+          }
+          if (gem_id.station() == 2){
+            is_ge21 = true;
+          }
+          */
+        }
+      }
+    
+    if (is_gem){
+      int16_t nME0_hits = 0;
+      int16_t nGE11_hits = 0;
+      int16_t nGE21_hits = 0;
+
+      int nHits{htp.numberOfAllHits(htp.TRACK_HITS)};
+      for (int i = 0; i != nHits; ++i) {
+        uint32_t hit = htp.getHitPattern(htp.TRACK_HITS, i);
+          std::cout<<"Hit pattern" <<std::endl;
+        int substructure = htp.getSubStructure(hit);
+        int hittype = htp.getHitType(hit);
+        if((substructure==(uint32_t)MuonSubdetId::GEM) && hittype == 0){
+          int GEM_station = htp.getMuonStation(hit);
+          switch (GEM_station) {
+            case 0:
+              ++nME0_hits;
+              break;
+            case 1:
+              ++nGE11_hits;
+              break;
+            case 2:
+              ++nGE21_hits;
+              break;
+          }
+        }
+      } //loop on hits
+    N_of_hits_GE11.push_back(nGE11_hits);
+    N_of_hits_GE21.push_back(nGE21_hits);
+    N_of_hits_ME0.push_back(nME0_hits);
+    } // if isgem
+      }
+    }
+    }
+  }
 
   tree_->Fill();
 
@@ -371,6 +492,9 @@ void GenAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetu
   /////MuonTime
   Muon_timeAtIpInOut.clear();
   Muon_timeAtIpInOutErr.clear();
+  N_of_hits_GE11.clear();
+  N_of_hits_GE21.clear();
+  N_of_hits_ME0.clear();
   }
 
 // ------------ method called once each job just before starting event loop  ------------
@@ -428,6 +552,9 @@ void GenAnalyzer::beginJob() {
   
   tree_->Branch("Muon_timeAtIpInOut",&Muon_timeAtIpInOut);
   tree_->Branch("Muon_timeAtIpInOutErr",&Muon_timeAtIpInOutErr);
+  tree_->Branch("N_of_hits_GE11", &N_of_hits_GE11);
+  tree_->Branch("N_of_hits_GE21", &N_of_hits_GE21);
+  tree_->Branch("N_of_hits_ME0", &N_of_hits_ME0);
 
 }
 
